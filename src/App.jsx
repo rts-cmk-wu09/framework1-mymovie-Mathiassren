@@ -1,30 +1,38 @@
-import React from "react";
-import "./app.css";
-import HeadingOne from "./components/HeadingOne";
+import "./App.css";
 import MovieCard from "./templates/MovieCard";
-import HeadingTwo from "./components/HeadingTwo";
-import SeeMoreBtn from "./components/SeeMoreButton";
+import SeeMoreButton from "./components/SeeMoreButton";
+import Heading from "./components/Heading";
+import Switch from "./components/Switch";
+import PopularMovieCard from "./templates/Popular";
 
-function MyButton() {
+function App() {
   return (
     <div className="App">
-      <header>
-        <HeadingOne />
+      <header className="gridContainer">
+        <Heading title="MyMovie" size="16px" as="h1" />
+        <Switch />
       </header>
       <main>
-        {" "}
-        <section className="scrollOverflow">
-          {" "}
-          <div className="flexContainer justify">
-            <HeadingTwo />
-            <SeeMoreBtn />
+        <section>
+          <div className="flexContainer space-between">
+            <Heading title="Now Showing" size="16px" as="h2" />
+            <SeeMoreButton />
+          </div>
+          <div className="flexContainer movieCardContainer">
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
           </div>
         </section>
-        <div className="flexContainer">
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-        </div>
+        <section>
+          <div className="flexContainer space-between">
+            <Heading className="popular" title="Popular" size="16px" as="h2" />
+            <SeeMoreButton />
+          </div>
+          <div className="secondFlexContainer">
+            <PopularMovieCard />
+          </div>
+        </section>
       </main>
       <footer>
         <nav></nav>
@@ -33,4 +41,4 @@ function MyButton() {
   );
 }
 
-export default MyButton;
+export default App;

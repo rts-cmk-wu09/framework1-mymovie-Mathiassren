@@ -1,19 +1,24 @@
-//Hoved template, hvor alle vores componenter bliver implementeret.
-//Husk at for hver gang at vi laver et component: Opret nyt component med react elementer under mappen "Components"
-import HeadingThree from "../components/HeadingThree";
+import styled from "styled-components";
 import Image from "../components/Image";
+import Heading from "../components/Heading";
 import MovieRating from "../components/MovieRating";
+
+const StyledArticle = styled.article`
+  height: 283px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
 
 const MovieCard = () => {
   return (
-    <article>
+    <StyledArticle>
       <figure>
         <Image />
-        <HeadingThree />
-        <MovieRating />
       </figure>
-      <h3></h3>
-    </article>
+      <Heading title="Movie Title" size="14px" as="h3" />
+      <MovieRating />
+    </StyledArticle>
   );
 };
 
