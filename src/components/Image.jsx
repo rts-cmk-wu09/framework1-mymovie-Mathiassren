@@ -1,15 +1,21 @@
-//Importere styled fra vores NPM biblotek
-import styled from "styled-components";
-//Importere coverimage fra vores asset folder
-import coverimage from "../assets/moviecover.png";
+import styled, { css } from "styled-components";
 
-//Styling sker her
 const StyledImg = styled.img`
-  box-shadow: 0px 5px 10px rgb(0 0 0 / 0.5);
-`;
+  ${(props) =>
+    (props.shadow &&
+      css`
+        box-shadow: 0px 5px 10px rgb(0 0 0 / 0.35);
+      `) ||
+    (props.objectFit &&
+      css`
+        object-fit: cover;
+      `)}
 
-//Oprettelse af component sker her.
-const Image = () => {
-  return <StyledImg src={coverimage} alt="blablabla" />;
+  width: ${(props) => props.width}px;
+  height: ${(props) => props.height}px;
+  border-radius: 10px;
+`;
+const Image = (props) => {
+  return <StyledImg {...props} />;
 };
 export default Image;

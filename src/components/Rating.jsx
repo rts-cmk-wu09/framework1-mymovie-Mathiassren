@@ -10,11 +10,9 @@ const StyledP = styled.p`
 `;
 const StyledDiv = styled.div`
   display: flex;
-  padding-bottom: 8px;
-  margin-left: 16px;
 `;
 
-const MovieRating = () => {
+const Rating = () => {
   return (
     <StyledDiv>
       <StyledFaStar />
@@ -23,4 +21,4 @@ const MovieRating = () => {
   );
 };
 
-export default MovieRating;
+export default Rating;
