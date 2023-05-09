@@ -83,3 +83,19 @@ h4 {
   margin-top: 100px;
   border: solid 1px red;
 }
+
+/*Light/dark mode*/
+:root {
+  --background-color: #fff;
+  --text-color: #000;
+}
+
+.dark {
+  --background-color: #222;
+  --text-color: #fff;
+}
+
+html {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}

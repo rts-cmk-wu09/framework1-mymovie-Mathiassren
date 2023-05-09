@@ -1,12 +1,11 @@
-import MovieCard from "../templates/MovieCard";
+import NowShowing from "../templates/NowShowing";
 import Button from "../components/Button";
 import Heading from "../components/Heading";
 import Switch from "../components/Switch";
 import MovieItem from "../templates/MovieItem";
 import Navigation from "../components/Navigation";
-import { Link } from "react-router-dom";
 
-function Listview() {
+const ListView = () => {
   return (
     <>
       <header className="gridContainer header">
@@ -20,12 +19,7 @@ function Listview() {
             <Button title="See More" />
           </div>
           <div className="flexContainer movieCardContainerLayout">
-            <Link to="/details/:id">
-              <MovieCard />
-            </Link>
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
+            <NowShowing />
           </div>
         </section>
         <section className="VerticalMovieListContainer">
@@ -46,6 +40,6 @@ function Listview() {
       </footer>
     </>
   );
-}
+};
 
-export default Listview;
+export default ListView;
