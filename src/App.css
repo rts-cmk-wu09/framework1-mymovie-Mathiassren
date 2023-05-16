@@ -5,8 +5,9 @@
   font-family: "Mulish", sans-serif;
   letter-spacing: 0.75px;
 }
-main {
-  padding: 0 2rem;
+a {
+  color: #000;
+  text-decoration: none;
 }
 body,
 figure,
@@ -30,6 +31,10 @@ h3 {
 h4 {
   font-weight: 300;
   color: #9c9c9c;
+}
+
+main {
+  padding: 0 2rem;
 }
 .header {
   position: fixed;
@@ -70,7 +75,6 @@ h4 {
   overflow-x: scroll;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
-  /* scroll-behavior: smooth; */
 }
 .movieCardContainerLayout::-webkit-scrollbar {
   display: none;
@@ -78,24 +82,4 @@ h4 {
 .movieListContainerLayout {
   flex-direction: column;
   gap: 16px;
-}
-.movieDescriptionContainerLayout {
-  margin-top: 100px;
-  border: solid 1px red;
-}
-
-/*Light/dark mode*/
-:root {
-  --background-color: #fff;
-  --text-color: #000;
-}
-
-.dark {
-  --background-color: #222;
-  --text-color: #fff;
-}
-
-html {
-  background-color: var(--background-color);
-  color: var(--text-color);
 }

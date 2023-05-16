@@ -10,7 +10,8 @@ const StyledSection = styled.section`
   gap: 12px;
 `;
 const StyledFaRegBookmark = styled(FaRegBookmark)`
-  align-self: center;
+  align-self: top;
+  padding-left: 25px;
 `;
 const StyledGridSection = styled.section`
   display: grid;
@@ -26,26 +27,26 @@ const StyledP = styled.p`
   font-size: 12px;
 `;
 
-const MovieInfo = () => {
+const MovieInfo = ({ data }) => {
   return (
     <StyledSection>
       <div className="flexContainer justify-space-between">
-        <Heading title="Spiderman: No Way Home" size="20" as="h1" />
+        <Heading title={data.title} size="20" as="h1" />
         <StyledFaRegBookmark />
       </div>
-      <Rating />
+      <Rating voteAverage={data.vote_average} />
       <StyledFlexSection>
-        <Label title="ACTION" />
-        <Label title="ADVENTURE" />
-        <Label title="FANTASY" />
+        <Label title="action" />
+        <Label title="action" />
+        <Label title="action" />
       </StyledFlexSection>
       <StyledGridSection>
         <Heading title="Length" size="12" as="h4" />
         <Heading title="Langauge" size="12" as="h4" />
-        <Heading title="Rating" size="12" as="h4" />
-        <StyledP>2h 28min</StyledP>
-        <StyledP>English</StyledP>
-        <StyledP>PG-13</StyledP>
+        <Heading title="Vote counts" size="12" as="h4" />
+        <StyledP>{data.runtime} min.</StyledP>
+        <StyledP>{data.original_language}</StyledP>
+        <StyledP>{data.vote_count}</StyledP>
       </StyledGridSection>
     </StyledSection>
   );
